@@ -1,0 +1,17 @@
+про строки
+https://programm.top/c-sharp/tutorial/string/
+https://shwanoff.ru/string-c-sharp/
+https://metanit.com/sharp/tutorial/7.2. 
+https://blog.rc21net.ru/csharp-stroki-strings/
+https://o7planning.org/ru/10441/csharp-string-and-stringbuilder-tutorial
+
+строки: разделение
+https://dotnetfiddle.net/qjqeWE
+https://ideone.com/Mmnvjp
+https://ideone.com/rbR09w
+https://ru.stackoverflow.com/questions/687764/Перенос-строки-после-n-символа-в-c
+
+
+про List, массив
+http://mycsharp.ru/post/10/2013_04_19_massivy_v_si-sharp_klass_list.html
+https://shwanoff.ru/list-c-sharp/
