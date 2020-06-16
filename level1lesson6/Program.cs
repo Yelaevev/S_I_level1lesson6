@@ -179,7 +179,7 @@ namespace Level1Space
                 // beg = end + 2;
             }
 
-            Console.WriteLine(s);
+           // Console.WriteLine(s);
             var t = someList.Count;
 
             int[] rech = new int[t];
@@ -199,11 +199,11 @@ namespace Level1Space
         //    string s = "строка разбивается на набор строк через выравнивание по заданной ширине";
         //    string subs = "ширине";
         //    int len = 12;
-        //    Console.WriteLine(subs);
-        //    Console.WriteLine(s);
-        //    Console.WriteLine(" ");
+        //    //Console.WriteLine(subs);
+        //    //Console.WriteLine(s);
+        //    //Console.WriteLine(" ");
 
-        //    int[] rech = WordSearch( len,  s,  subs);
+        //    int[] rech = WordSearch(len, s, subs);
 
 
         //    foreach (var item in rech)
