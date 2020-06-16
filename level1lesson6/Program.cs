@@ -18,7 +18,8 @@ namespace Level1Space
             //Console.WriteLine(subs);
             //Console.WriteLine(s);
             //Console.WriteLine(" ");
-            int leng = s.Length;
+            int lengs = s.Length;
+            int lengsubs = subs.Length;
             var someList = new List<int>();
             for (var j = len; j < s.Length; j = i + len + 3)
             {
@@ -41,6 +42,11 @@ namespace Level1Space
                     end = i;
                     int l, ind;
                     int flag = 0;
+                    if (s[0] != ' ')
+                    {
+                        s = s.Insert(0, " ");
+                        end = end + 1;
+                    }
                     int m = end + 1;// plus 1 i.e. dobavili probel pri razdelenii
                     int p = subs.Length;
 
@@ -78,15 +84,25 @@ namespace Level1Space
                     i = j;
                     //Console.WriteLine(i);
                     s = s.Insert(i, " \n");
-                    //int temp = i - subs.Length + 2;
-                    //s = s.Insert(temp, " "); //nuzhno dobavit probel i.e. granitsy iskomogo slova rashirili probelami
+                 
                     //Console.WriteLine(i);
-                    end = i + 1;
+                    end = i + 2;
                     int l, ind;
                     int flag = 0;
-                    int m = end + 1;
                     int p = subs.Length;
 
+                    if (s[0] != ' ')
+                    {
+                        s = s.Insert(0, " ");
+                        end = end + 1;
+                    }
+                    else
+                    {
+                        int temp = i - len;
+                        s = s.Insert(temp, " "); //nuzhno dobavit probel i.e. granitsy iskomogo slova rashirili probelami
+                        beg = beg - 2;
+                    }
+                    int m = end+1;
                     for (ind = beg; ind <= (m - p); ind++)
                     {
                         l = 0;
@@ -96,6 +112,11 @@ namespace Level1Space
                             //if ((i + l >= m)|| (str_m[i + l] != str_p[l])) 
                             if (s[ind + l] != subs[l])
                             {
+                                char t11 = s[ind + l];
+                                char t1213 = s[7];
+                                char t21 = subs[l];
+                                string test1 = t11.ToString();
+                                string test2 = t21.ToString();
                                 flag = 0;
                                 break;
                             }
@@ -120,17 +141,25 @@ namespace Level1Space
 
             int l1, ind1;
             int flag1 = 0;
-            int m1 = s.Length;
+            s = s.Insert(beg - 1, " ");
+            int m1 = s.Length + 1;
             int p1 = subs.Length;
+            char t1;
+            char t2;
+            beg = beg - 1;
             for (ind1 = beg; ind1 <= (m1 - p1); ind1++)
             {
                 l1 = 0;
                 flag1 = 1;
                 for (l1 = 0; (l1 < p1); l1++)
                 {
-                  
+
                     if (s[ind1 + l1] != subs[l1])
                     {
+                        t1 = s[ind1 + l1];
+                        t2 = subs[l1];
+                        string test1 = t1.ToString();
+                        string test2 = t2.ToString();
                         flag1 = 0;
                         break;
                     }
@@ -142,15 +171,15 @@ namespace Level1Space
             if (flag1 == 1)
             {
                 someList.Add(1);
-                beg = end + 2;
+                //beg = end + 2;
             }
             else
             {
                 someList.Add(0);
-                beg = end + 2;
+                // beg = end + 2;
             }
 
-          Console.WriteLine(s);
+            Console.WriteLine(s);
             var t = someList.Count;
 
             int[] rech = new int[t];
@@ -158,8 +187,6 @@ namespace Level1Space
             {
                 rech[k] = someList[k];
             }
-
-
 
             return rech;
         }
@@ -169,14 +196,15 @@ namespace Level1Space
         //static void Main(string[] args)
         //{
 
-        //    string s = " строка разбивается на набор строк через выравнивание по заданной ширине";
-        //    string subs = "строка";
+        //    string s = "строка разбивается на набор строк через выравнивание по заданной ширине";
+        //    string subs = "ширине";
         //    int len = 12;
         //    Console.WriteLine(subs);
         //    Console.WriteLine(s);
         //    Console.WriteLine(" ");
 
-        //    int[] rech = WordSearch(len, s, subs);
+        //    int[] rech = WordSearch( len,  s,  subs);
+
 
         //    foreach (var item in rech)
         //    {
